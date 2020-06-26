@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--React core CDN-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+
+    <!--react DOM cdn to glue our react components to the DOM-->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!--Babel CDN to transpile JSX into HTML-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>ReactJS</title>
+</head>
+
+<!--React is declarative. You can write HTML in return of render(). Its called JSX -->
+<!--JSX is not supported by browser out of the box. So you need to transpile it using babel-->
+
+<body>
+    <div id="app">
+
+    </div>
+
+    <script type="text/babel">
+        class App extends React.Component{
+            state = {
+                name:"Ishan",
+                purpose: 'Learning ReactJS'
+                
+            }
+            //NOTE!!!! 
+            //using 'this' on functions is different from using 'this' in the return() of render()
+            //in return, this refers to the instance of the class
+            //whereas, outside the return function, it is undefined.
+            //however, if we use arrow functions, this refers to the instance of the class.
+            //So ALWAYS use arrow functions for DOM events where you might need to access the state.
+            
+            //arrow function (this = instance of class)
+            handleClick = (e) => {
+                console.log(this.state.name)
+            }
+
+            //regular function (this = undefined)
+            handleHover(e){
+                //e.pageX will get us the x coordinate of th emouse on that page.
+                console.log(e.target,e.pageX);
+            }
+            handleCopy(e){
+                console.log('Do NOT copy!')
+            }
+            render(){
+                return (
+                    //we can write JSX (Javascript XML) in here. 
+                    //It is pretty much HTML.
+                    <div className = 'app-content'>
+                        <h1>Hello! My name is {this.state.name}</h1>
+                        <h2>{this.state.purpose}</h2>
+                        
+                        <button onClick={this.handleClick}>Click me!</button>
+                        <button onMouseOver={this.handleHover}>Hover me.</button>
+                        
+                        <p onCopy= {this.handleCopy}>Try to copy me!</p>
+                   </div>
+                    
+                )
+            }
+        }
+        ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+</body>
+
+</html>
