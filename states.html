@@ -25,13 +25,19 @@
 
     <script type="text/babel">
         class App extends React.Component{
+            
+            //State:
+            state = {
+               name:'Ishan',
+               purpose: 'Learning ReactJS!' 
+            }
             render(){
                 return (
                     //we can write JSX (Javascript XML) in here. 
                     //It is pretty much HTML.
                     <div className = 'app-content'>
-                        <h1>Hello!</h1>
-                        <p>{Math.random()*10}</p>
+                        <h1>Hello! My name is {this.state.name}</h1>
+                        <p>{this.state.purpose}</p>
                    </div>
                     
                 )
