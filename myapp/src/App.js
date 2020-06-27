@@ -2,11 +2,21 @@
 // else use React.component instead of Component
 
 import React, { Component } from 'react';
-import NestedComponent from './nestedComponent';
-import PropsComponent from './props'
-import PropsComponent2 from './props2'
-
+import NestedComponent from './components/nestedComponent';
+import PropsComponent from './components/props'
+import PropsComponent2 from './components/props2'
+import OutputList from './components/outputList'
 class App extends Component{
+
+  //This time we are going to send a list of people to the child component as props.
+  //The child component will take this list and render divs accordingly.
+  //So we are storing people array in the state to pass on as props.
+  state = {
+    People : [
+      {name : 'Ishan', age: 22},
+      {name : 'xyz', age : 22}
+    ]
+  }
   render(){
     return(
       <div>
@@ -16,6 +26,8 @@ class App extends Component{
           <PropsComponent name = 'Ishan' age = '22'/>
 
           <PropsComponent2 name = 'Destructured' age = 'Destructured' />
+
+          <OutputList people = {this.state.People} />
       </div>
       
       
