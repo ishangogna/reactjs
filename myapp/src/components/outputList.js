@@ -10,7 +10,7 @@ class OutputList extends Component {
         const { people } = this.props;
         const peopleList = people.map(person => {
             return (
-                <div>
+                <div key={person.id}>
                 <div id = 'name'>
                     {person.name}
                 </div>

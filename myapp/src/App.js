@@ -6,6 +6,7 @@ import NestedComponent from './components/nestedComponent';
 import PropsComponent from './components/props'
 import PropsComponent2 from './components/props2'
 import OutputList from './components/outputList'
+import Stateless from './components/functionBased'
 class App extends Component{
 
   //This time we are going to send a list of people to the child component as props.
@@ -28,6 +29,8 @@ class App extends Component{
           <PropsComponent2 name = 'Destructured' age = 'Destructured' />
 
           <OutputList people = {this.state.People} />
+
+          <Stateless people = {this.state.People}  />
       </div>
       
       
