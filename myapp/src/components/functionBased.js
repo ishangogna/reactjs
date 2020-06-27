@@ -14,6 +14,7 @@ const Stateless = (props) => {
     const peopleList = people.map(person => {
         return (
             <div id = 'info' key = {person.id}>
+                <h1>This is a stateless component (function based) {person.id}</h1>
                 <div id = 'name'>{person.name}</div>
                 <div id = 'age'>{person.age}</div>
             </div>

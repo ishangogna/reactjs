@@ -11,6 +11,7 @@ class OutputList extends Component {
         const peopleList = people.map(person => {
             return (
                 <div key={person.id}>
+                <h1>This is output list. {person.id}</h1>
                 <div id = 'name'>
                     {person.name}
                 </div>

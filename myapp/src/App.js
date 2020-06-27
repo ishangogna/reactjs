@@ -7,6 +7,7 @@ import PropsComponent from './components/props'
 import PropsComponent2 from './components/props2'
 import OutputList from './components/outputList'
 import Stateless from './components/functionBased'
+import Conditional from './components/conditionalOutput'
 class App extends Component{
 
   //This time we are going to send a list of people to the child component as props.
@@ -14,8 +15,8 @@ class App extends Component{
   //So we are storing people array in the state to pass on as props.
   state = {
     People : [
-      {name : 'Ishan', age: 22},
-      {name : 'xyz', age : 22}
+      {name : 'Ishan', age: 23, id: 1},
+      {name : 'xyz', age : 22, id: 2}
     ]
   }
   render(){
@@ -31,6 +32,8 @@ class App extends Component{
           <OutputList people = {this.state.People} />
 
           <Stateless people = {this.state.People}  />
+
+          <Conditional people = {this.state.People}/>
       </div>
       
       
