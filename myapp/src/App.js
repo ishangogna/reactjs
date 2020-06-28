@@ -8,6 +8,7 @@ import PropsComponent2 from './components/props2'
 import OutputList from './components/outputList'
 import Stateless from './components/functionBased'
 import Conditional from './components/conditionalOutput'
+import Forms2 from './components/forms2'
 class App extends Component{
 
   //This time we are going to send a list of people to the child component as props.
@@ -19,7 +20,30 @@ class App extends Component{
       {name : 'xyz', age : 22, id: 2}
     ]
   }
+
+  //passing Function as prop
+  //This function takes person as argument and is passed on as props to forms2
+  //forms2 invokes it in the handleSubmit, passing its state as parameter
+  //We therefore have access to form2's state as person now.
+  addPerson = (person) => {
+    //this will log the state of forms2
+    console.log(person);
+    
+    //using spread operator to concatenate the new person object from forms2 with the people
+    //on this component.
+    let personList = [...this.state.People,person];
+    //this will output the sttate received from forms2 + People
+    console.log(personList);
+
+    this.setState({
+      People : personList,
+    })
+    console.log('Update people : ' + this.state.People);
+  }
   render(){
+    //IMP!! spread operator returns all the diff components of an iteratable.
+    // You can then do [...this.state.People,anotherObject] to add another object to People.
+    console.log(...this.state.People);
     return(
       <div>
           <h1>Hello from react.</h1>
@@ -30,10 +54,14 @@ class App extends Component{
           <PropsComponent2 name = 'Destructured' age = 'Destructured' />
 
           <OutputList people = {this.state.People} />
+          
 
           <Stateless people = {this.state.People}  />
 
           <Conditional people = {this.state.People}/>
+
+          <Forms2 addPerson = {this.addPerson}/>
+          
       </div>
       
       
