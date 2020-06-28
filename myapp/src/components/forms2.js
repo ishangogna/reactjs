@@ -14,6 +14,9 @@ class Forms2 extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
+        this.setState({
+            id : Math.random(),
+        })
         this.props.addPerson(this.state);
     }
     

@@ -53,6 +53,19 @@ class App extends Component{
       People: updatedPeople,
     })
   } 
+
+  //Lifecycle Methods : 
+  //1. ComponentDidMount : fires when component is mounted to the DOM.
+  componentDidMount(){
+    console.log('component mounted.');
+  }
+
+  //2.componentDidUpdate : fires when component updates, ie props change or state.
+  // takes 2 parameters : prevProps and prevState to compare with currentProps and currentState
+  componentDidUpdate(prevProps,prevState){
+    console.log('component updated.');
+    console.log(prevProps,prevState);
+  }
   render(){
     //IMP!! spread operator returns all the diff components of an iteratable.
     // You can then do [...this.state.People,anotherObject] to add another object to People.

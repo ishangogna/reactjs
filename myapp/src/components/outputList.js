@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//you can simply import a stylesheet.
+//note : It will apply globally. not just this component!
+import '../styles/outputList.css'
 //This component takes the list as props from app.js(parent component),
 //Destructures the props and stores them in 'people'
 //We then make a peopleList which maps every person to return a template containing name/age
