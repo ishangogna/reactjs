@@ -1,0 +1,19 @@
+You can use the 'react-router-dom' module for setting up routing.
+
+1. You have to extract destructure BrowserRoute and Route from react-router-dom by : 
+    import {BrowserRouter, Route} from 'react-router-dom';
+
+2. enclose the div = app  in <BrowserRoute> and </BrowserRoute> tags to let react know u wanna setup routing.
+    <BrowserRouter>
+        <div id = 'app'>
+        </div>
+    </BrowserRouter>
+
+3. Add routes. Make sure to use 'exact' keyword since by default, react doesnt compare exact, but rather checks if that string is present.
+    <BrowserRouter>
+    <div id = 'app'>
+        <Navbar /> -- fixed element will be present on all routes.
+        <Route exact path = '/' component = 'Home' /> --Home will  get loaded under Navbar on / path.
+        <Route exact path = '/Contact' component = 'Contact' /> --Contact will  get loaded under Navbar on / path.   
+    </div>
+    </BrowserRouter>

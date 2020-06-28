@@ -9,6 +9,13 @@ import OutputList from './components/outputList'
 import Stateless from './components/functionBased'
 import Conditional from './components/conditionalOutput'
 import Forms2 from './components/forms2'
+import Navbar from './components/router-pages/navbar'
+import Home from './components/router-pages/home'
+import About from './components/router-pages/about'
+import Contact from './components/router-pages/contact'
+
+//setup routing using react-router-dom
+import { BrowserRouter, Route } from 'react-router-dom'
 class App extends Component{
 
   //This time we are going to send a list of people to the child component as props.
@@ -71,24 +78,30 @@ class App extends Component{
     // You can then do [...this.state.People,anotherObject] to add another object to People.
     console.log(...this.state.People);
     return(
-      <div>
-          <h1>Hello from react.</h1>
+      // Surround the div with BrowserRouter
+      <BrowserRouter>
+      <div className = 'app'>
+          {/* <h1>Hello from react.</h1>
           {/* <NestedComponent />
 
           <PropsComponent name = 'Ishan' age = '22'/>
 
           <PropsComponent2 name = 'Destructured' age = 'Destructured' /> */}
 
-          <OutputList deletePerson = {this.deletePerson} people = {this.state.People} />
+          {/* <OutputList deletePerson = {this.deletePerson} people = {this.state.People} /> */}
           
 
           {/* <Stateless people = {this.state.People}  />
 
           <Conditional people = {this.state.People}/> */}
 
-          <Forms2 addPerson = {this.addPerson}/>
-          
+          {/* <Forms2 addPerson = {this.addPerson}/> */}
+           <Navbar />
+           <Route exact path = '/' component = {Home}/>
+           <Route path = '/about' component = {About} />
+           <Route path = '/contact' component = {Contact} />
       </div>
+      </BrowserRouter>
       
       
     )
