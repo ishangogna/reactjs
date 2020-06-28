@@ -40,6 +40,19 @@ class App extends Component{
     })
     console.log('Update people : ' + this.state.People);
   }
+
+  //function as props to delete the person based on its id.
+  deletePerson = (id) => {
+    //updatedPeople filters People and returns only those persons whose id is not equal
+    // to the id given by outputList when the function is passed down as props.
+    let updatedPeople = this.state.People.filter(person => {
+      return person.id !== id;
+      
+    })
+    this.setState({
+      People: updatedPeople,
+    })
+  } 
   render(){
     //IMP!! spread operator returns all the diff components of an iteratable.
     // You can then do [...this.state.People,anotherObject] to add another object to People.
@@ -47,18 +60,18 @@ class App extends Component{
     return(
       <div>
           <h1>Hello from react.</h1>
-          <NestedComponent />
+          {/* <NestedComponent />
 
           <PropsComponent name = 'Ishan' age = '22'/>
 
-          <PropsComponent2 name = 'Destructured' age = 'Destructured' />
+          <PropsComponent2 name = 'Destructured' age = 'Destructured' /> */}
 
-          <OutputList people = {this.state.People} />
+          <OutputList deletePerson = {this.deletePerson} people = {this.state.People} />
           
 
-          <Stateless people = {this.state.People}  />
+          {/* <Stateless people = {this.state.People}  />
 
-          <Conditional people = {this.state.People}/>
+          <Conditional people = {this.state.People}/> */}
 
           <Forms2 addPerson = {this.addPerson}/>
           

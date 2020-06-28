@@ -18,6 +18,7 @@ class OutputList extends Component {
                 <div id = 'age'>
                     {person.age}
                 </div>
+                <button onClick = {()=>{this.props.deletePerson(person.id)}}>Delete</button>
             </div>
             )
         })
