@@ -12,7 +12,7 @@ import Forms2 from './components/forms2'
 import Navbar from './components/router-pages/navbar'
 import Home from './components/router-pages/home'
 import About from './components/router-pages/about'
-import Contact from './components/router-pages/contact'
+import Posts from './components/router-pages/posts'
 
 //setup routing using react-router-dom
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -99,7 +99,7 @@ class App extends Component{
            <Navbar />
            <Route exact path = '/' component = {Home}/>
            <Route path = '/about' component = {About} />
-           <Route path = '/contact' component = {Contact} />
+           <Route path = '/posts' component = {Posts} />
       </div>
       </BrowserRouter>
       

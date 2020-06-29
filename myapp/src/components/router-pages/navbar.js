@@ -22,7 +22,7 @@ const Navbar = (props) => {
                 <ul className = 'right'>
                     <li><Link to= '/'>Home</Link></li>
                     <li><NavLink to = '/about'>About Us</NavLink></li>
-                    <li><Link to = '/contact'>Contact us</Link></li>
+                    <li><Link to = '/posts'>Posts</Link></li>
                 </ul>
             </div>
         </nav>
