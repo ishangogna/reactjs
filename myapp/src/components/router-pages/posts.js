@@ -5,6 +5,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+//for linking to the diff individual post pages from their id..
+import {Link} from 'react-router-dom';
+
 class Posts extends Component {
     state = {
         posts : [ ],
@@ -26,7 +29,9 @@ class Posts extends Component {
                 return(
                     <div className="post card">
                         <div className="card-content">
+                            <Link to = {'/posts/' + post.id}>
                             <span className="card-title">{post.title}</span>
+                            </Link>
                             <p>{post.body}</p>
                         </div>
                     </div>

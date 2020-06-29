@@ -13,7 +13,7 @@ import Navbar from './components/router-pages/navbar'
 import Home from './components/router-pages/home'
 import About from './components/router-pages/about'
 import Posts from './components/router-pages/posts'
-
+import SinglePost from './components/router-pages/singlePost'
 //setup routing using react-router-dom
 import { BrowserRouter, Route } from 'react-router-dom'
 class App extends Component{
@@ -98,8 +98,9 @@ class App extends Component{
           {/* <Forms2 addPerson = {this.addPerson}/> */}
            <Navbar />
            <Route exact path = '/' component = {Home}/>
-           <Route path = '/about' component = {About} />
-           <Route path = '/posts' component = {Posts} />
+           <Route exact path = '/about' component = {About} />
+           <Route exact path = '/posts' component = {Posts} />
+           <Route exact path = '/posts/:id' component = {SinglePost} />
       </div>
       </BrowserRouter>
       
