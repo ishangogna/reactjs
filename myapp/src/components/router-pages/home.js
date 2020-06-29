@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Rainbow from '../../hoc/Rainbow'
 
 const Home = (props) => {
     // To redirect to /contact
@@ -12,4 +12,4 @@ const Home = (props) => {
     )
 }
 
-export default Home;
+export default Rainbow(Home);
