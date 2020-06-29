@@ -1,0 +1,11 @@
+In order to redirect, you can use props that are passed down to the router components by react-router-dom.
+
+ 1. one property on these props is "history", and you can do:
+    this.props.history.push('/url') to redirect from that component to the url.
+
+2. But, these props are not passed down to those components who are not a route component.
+    Such as navbar (in this case). So we can surround them with wrapper components called 
+    'Higer order components' to make them a route.
+    - react-router-dom comes with a higher component called 'withRouter' so you can 
+        do export default withRouter(NavBar) to make it a route. It would then have access to props that
+        react-router-dom passes such as history which we can then .push to redirect programmatically.

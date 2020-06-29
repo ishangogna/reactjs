@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-const Home = () => {
+const Home = (props) => {
+    // To redirect to /contact
+    // props.history.push('/contact');
     return(
         <div className = 'container'>
             <h4 className = 'center'>Home</h4>
